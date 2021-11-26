@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sentimental Analysis With RNN and GSD</title>
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 class="py-4 my-5 text-center">Sentimental Analysis With RNN and GSD</h1>
+
+    <div class="container">
+      <div class="row">
+        <p
+          class="lead text-dark mx-auto text-center"
+          style="display: none"
+          id="loading"
+        ></p>
+        <p
+          class="lead text-danger mx-auto text-center"
+          style="display: none"
+          id="error"
+        ></p>
+        <p
+          class="lead text-success mx-auto text-center"
+          style="display: none"
+          id="positive"
+        ></p>
+        <p
+          class="lead text-warning mx-auto text-center"
+          style="display: none"
+          id="negative"
+        ></p>
+        <p
+          class="lead text-primary mx-auto text-center"
+          style="display: none"
+          id="neutral"
+        ></p>
+        <div class="col-md-8 mt-3 mx-auto">
+          <form id="form">
+            <div class="form-outline mb-3">
+              <textarea
+                class="form-control"
+                name="commment"
+                id="comment"
+                rows="4"
+              ></textarea>
+              <label class="form-label" for="comment">Enter Comment</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              Predict
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- scripts -->
+    <!-- MDB -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.js"
+    ></script>
+    <!-- socket.io  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+      integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- axios -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+      integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- font awesome  -->
+    <script
+      src="https://kit.fontawesome.com/a50954a027.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- custom javascript  -->
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+  </body>
+</html>
